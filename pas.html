@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pas.css">
+</head>
+<body>
+    <h1 id="para">This is para text</h1>
+
+
+    <button onclick="colorChange('red')" type="submit">Red</button>
+    <button onclick="colorChange('green')" type="submit">Green</button><br><br><br><br>
+
+
+    <input type="text" placeholder="Type something here to see its length." size="50">
+    <p id="log"></p>
+
+    <textarea name="inputString" cols="50" rows="4">Text to count</textarea>
+    <br>
+    <input type="button" name="Convert" value="Count Words" onClick="countWords();"> 
+    <input name="wordcount" type="text" value="" size="6">
+
+    <script>
+        function countWords(){
+        s = document.getElementById("inputString").value;
+        s = s.replace(/(^\s*)|(\s*$)/gi,"");
+        s = s.replace(/[ ]{2,}/gi," ");
+        s = s.replace(/\n /,"\n");
+        document.getElementById("wordcount").value = s.split(' ').length;
+        }
+    </script>
+
+
+    <script src="pas.js"></script>
+</body>
+</html>
